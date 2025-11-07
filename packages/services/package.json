@@ -1,0 +1,37 @@
+{
+  "name": "@repo/services",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts",
+    "./auth": "./src/auth/index.ts",
+    "./catalog": "./src/catalog/index.ts",
+    "./catalog/feature.service": "./src/catalog/feature.service.ts",
+    "./catalog/feature.repository": "./src/catalog/feature.repository.ts",
+    "./catalog/plan.service": "./src/catalog/plan.service.ts",
+    "./catalog/plan.repository": "./src/catalog/plan.repository.ts",
+    "./catalog/pricing.service": "./src/catalog/pricing.service.ts",
+    "./catalog/pricing.repository": "./src/catalog/pricing.repository.ts",
+    "./catalog/plan-feature.service": "./src/catalog/plan-feature.service.ts",
+    "./catalog/plan-feature.repository": "./src/catalog/plan-feature.repository.ts",
+    "./killbill": "./src/killbill/index.ts",
+    "./feature-flags": "./src/feature-flags/index.ts",
+    "./feature-flags/service": "./src/feature-flags/feature-flag.service.ts"
+  },
+  "scripts": {
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "xmlbuilder2": "^4.0.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.24",
+    "typescript": "^5.3.3"
+  }
+}

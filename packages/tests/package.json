@@ -1,0 +1,35 @@
+{
+  "name": "@repo/tests",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Integration and unit tests for Tirdad platform",
+  "type": "module",
+  "scripts": {
+    "pretest": "./scripts/test-server.sh start",
+    "test": "vitest run",
+    "posttest": "./scripts/test-server.sh stop",
+    "pretest:integration": "./scripts/test-server.sh start",
+    "test:integration": "vitest run integration",
+    "posttest:integration": "./scripts/test-server.sh stop",
+    "test:unit": "vitest run unit",
+    "test:watch": "vitest",
+    "test:server:start": "./scripts/test-server.sh start",
+    "test:server:stop": "./scripts/test-server.sh stop",
+    "test:server:status": "./scripts/test-server.sh status"
+  },
+  "dependencies": {
+    "@repo/auth": "workspace:*",
+    "@repo/database": "workspace:*",
+    "@repo/services": "workspace:*"
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.0.0",
+    "@types/supertest": "^6.0.3",
+    "@vitest/ui": "^1.0.0",
+    "dotenv": "^17.2.3",
+    "supertest": "^7.1.4",
+    "vitest": "^1.0.0"
+  }
+}

@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+@import '@repo/ui/styles/default.css';
+
+/**
+ * Tailwind CSS official document:
+ * https://tailwindcss.com/docs/detecting-classes-in-source-files
+ *
+ * if you ever need to explicitly add a source that's excluded by default, 
+ * you can always add it with the @source directive.
+ */
+@source '../../node_modules/@repo/ui';
+
+/* Custom font families for RTL support */
+:root {
+  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-arabic: 'Noto Sans Arabic', system-ui, sans-serif;
+}
