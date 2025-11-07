@@ -1,0 +1,11 @@
+{
+  "current_release": null,
+  "phase": "initialization",
+  "active_agent": null,
+  "next_task": "Start a new project by telling your AI: 'I want to start a new project using AgentForge'",
+  "progress_percentage": 0,
+  "blocked": false,
+  "blocking_reason": null,
+  "last_updated": "2025-01-01T00:00:00Z",
+  "completed_artifacts": []
+}

@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# Run validation gates before push
+echo "🔍 Running validation gates..."
+
+# Run tests
+echo "Running tests..."
+pnpm test
+
+# Run typecheck
+echo "Running typecheck..."
+pnpm typecheck
+
+# Run lint
+echo "Running lint..."
+pnpm lint
+
+echo "✅ All validation gates passed!"

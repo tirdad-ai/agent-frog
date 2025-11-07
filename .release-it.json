@@ -1,0 +1,41 @@
+{
+  "git": {
+    "commitMessage": "chore: release v${version}",
+    "tagName": "v${version}",
+    "requireCleanWorkingDir": false,
+    "requireUpstream": false,
+    "push": true,
+    "pushTags": true
+  },
+  "npm": {
+    "publish": false,
+    "ignoreVersion": false
+  },
+  "github": {
+    "release": true,
+    "releaseName": "Release v${version}",
+    "releaseNotes": "npx auto-changelog --stdout --commit-limit false -u --template https://raw.githubusercontent.com/release-it/release-it/master/templates/changelog-compact.hbs"
+  },
+  "hooks": {
+    "before:init": [
+      "pnpm lint",
+      "pnpm typecheck",
+      "pnpm test"
+    ],
+    "after:bump": [
+      "node scripts/version-packages.js ${version}",
+      "node scripts/build-changed.js"
+    ],
+    "after:release": [
+      "echo '\n✅ Release v${version} complete!\n'"
+    ]
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md",
+      "header": "# Changelog\n\nAll notable changes to this project will be documented in this file.",
+      "ignoreRecommendedBump": false
+    }
+  }
+}
